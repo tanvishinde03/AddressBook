@@ -10,6 +10,17 @@ namespace AddressBook
     {
         static void Main(string[] args)
         {
-        }
+            
+            AddressBook addressbook = new AddressBook();
+            addressbook.AddContact();
+            addressbook.Display();
+            Console.ReadLine();
+
+
+
+
+
+
+            }
     }
 }
