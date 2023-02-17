@@ -19,6 +19,7 @@ namespace AddressBook
                    Console.WriteLine("Select 2: Edit Existing Contact\n");
                 Console.WriteLine("Select 3: Display Contact\n");
                 Console.WriteLine("Select 4: Delete Contact\n");
+                Console.WriteLine("Select 4 : Exit Creating Contact\n");
                 Console.WriteLine("Select Option");
                 
                 int option = Convert.ToInt32(Console.ReadLine());
