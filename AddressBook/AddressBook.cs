@@ -11,8 +11,6 @@ namespace AddressBook
     {
         Contact contact = new Contact();
         List<Contact> contactList = new List<Contact>();
-
-
         public void AddContact()
         {
             Contact contact = new Contact();
@@ -25,7 +23,7 @@ namespace AddressBook
             Console.WriteLine("Enter your City");
             contact.City = Console.ReadLine();
             Console.WriteLine("Enter your State");
-            contact.state = Console.ReadLine();
+            contact.State = Console.ReadLine();
             Console.WriteLine("Enter your Zip Code");
             contact.Zip = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Enter your Phone Number");
@@ -39,13 +37,13 @@ namespace AddressBook
         public void Display()
         {
             foreach (var contact in contactList)
-                Console.WriteLine("Contact Details are " + "\n\n First Name : " + contact.FirstName + "\n Last Name : " + contact.LastName + "\n Address : " + contact.Address + "\n City : " + contact.City + "\n State : " + contact.state + "\n Zip : " + contact.Zip + "\n Phone Number : " + contact.PhoneNumber + "\n Email : " + contact.Email);
+                Console.WriteLine("Contact Details are " + "\n\n First Name : " + contact.FirstName + "\n Last Name : " + contact.LastName + "\n Address : " + contact.Address + "\n City : " + contact.City + "\n State : " + contact.State + "\n Zip : " + contact.Zip + "\n Phone Number : " + contact.PhoneNumber + "\n Email : " + contact.Email);
         }
 
         public void EditContact(string name)
         {
             Console.WriteLine("Enter The First Name");
-           
+
             foreach (var contact in contactList)
             {
                 if (contact.FirstName.Equals(name))
@@ -72,7 +70,7 @@ namespace AddressBook
                             break;
                         case 5:
                             Console.WriteLine("Enter the new State");
-                            contact.state = Console.ReadLine();
+                            contact.State = Console.ReadLine();
                             break;
                         case 6:
                             Console.WriteLine("Enter the new Zip");
@@ -94,11 +92,30 @@ namespace AddressBook
                 }
             }
         }
-    }
+                public void DeleteContact()
+                {
+                    Console.WriteLine("Enter the First Name");
+                    string name = Console.ReadLine();
+                    Contact deleteContact = new Contact();
+                    foreach (var contact in contactList.ToList())
+                    {
+                        if (contact.FirstName.Equals(name))
+                        {
+                            deleteContact = contact;
+
+                        }
+                        contactList.Remove(deleteContact);
+                        Console.WriteLine("Contact has been deleted");
+                    }
+                }
+
+            }
+        }
+    
 
 
 
 
 
-}
+
 

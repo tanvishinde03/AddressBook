@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace AddressBook
 {
-    internal class Program
+    public class Program
     {
-        static void Main(string[] args)
+        static void Main(String[] args)
         {
 
             AddressBook addressbook = new AddressBook();
@@ -18,6 +18,7 @@ namespace AddressBook
                 Console.WriteLine("Select 1: For Creating Contact\n");
                    Console.WriteLine("Select 2: Edit Existing Contact\n");
                 Console.WriteLine("Select 3: Display Contact\n");
+                Console.WriteLine("Select 4: Delete Contact\n");
                 Console.WriteLine("Select Option");
                 
                 int option = Convert.ToInt32(Console.ReadLine());
@@ -27,20 +28,24 @@ namespace AddressBook
                     case 1:
                         addressbook.AddContact();
                         addressbook.Display();
-
                         break;
                     case 2:
                        string name = Console.ReadLine();
                         addressbook.EditContact( name);
-                        addressbook.Display();
+                        Console.ReadLine();
                         break;
                     case 3:
                         Console.WriteLine("Display Contact Details");
                         addressbook.Display();
                         Console.ReadLine();
-
                         break;
+
                     case 4:
+                        Console.WriteLine("Delete Contact Details");
+                        addressbook.DeleteContact();
+                        Console.ReadLine();
+                        break;
+                    case 5:
                         free = false;
                         break;
                 }
